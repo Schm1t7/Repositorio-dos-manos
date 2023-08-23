@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Página com senha</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 15vh;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      padding-right: 40px;
+    }
+
+    form {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+    }
+
+    input[type="password"] {
+     margin-right: 10px;
+    }
+
+    input[type="submit"] {
+     padding: 5px 10px;
+     background-color: white;
+     color: black;
+     cursor: pointer;
+    }
+
+
+    input[type='password']{
+      padding: 3px;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Insira a senha</h1>
+  
+  <form id="senhaForm" onsubmit="validarSenha(event)">
+    <input type="password" id="senhaInput" placeholder="Digite a senha">
+    <input type="submit" value="Enviar">
+  </form>
+  
+  <script>
+    function validarSenha(event) {
+      event.preventDefault(); // Evita o envio do formulário
+
+      var senhaInserida = document.getElementById("senhaInput").value;
+      var senhaCorreta = "senha"; // Defina a senha correta aqui
+
+      if (senhaInserida === senhaCorreta) {
+        window.location.href = "lugartop.html"; // Redireciona para outra página
+      } else {
+        alert("Senha incorreta. Tente novamente.");
+      }
+    }
+  </script>
+</body>
+</html>
